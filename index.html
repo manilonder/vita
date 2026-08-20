@@ -162,6 +162,21 @@ input::placeholder,textarea::placeholder{color:var(--tx3)}
 .next .big{font-size:36px;font-weight:600;letter-spacing:-.03em;margin:7px 0 3px}
 .next .sub{font-size:13px;color:var(--tx2)}
 
+.mj-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
+.mj-head .ttl{margin:0}.mj-badge{flex-shrink:0;border:1px solid rgba(57,255,136,.25);background:rgba(57,255,136,.08);color:var(--icon);border-radius:99px;padding:5px 9px;font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
+.mj-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.mj-widget{min-width:0;background:var(--surface2);border:1px solid var(--line);border-radius:15px;padding:13px}
+.mj-widget.wide{grid-column:1/-1}.mj-label{font-size:10px;color:var(--tx3);text-transform:uppercase;letter-spacing:.045em;line-height:1.35}
+.mj-value{font-size:21px;font-weight:650;letter-spacing:-.025em;margin-top:6px;line-height:1.1}.mj-value small{font-size:11px;color:var(--tx3);font-weight:500;letter-spacing:0}
+.mj-sub{font-size:10.5px;color:var(--tx3);line-height:1.45;margin-top:5px}.mj-meter{height:5px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:9px}.mj-meter span{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--acc),var(--icon));transition:width .7s ease}
+.mj-paths{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:9px}.mj-path{border-radius:13px;padding:12px;background:rgba(124,107,255,.08);border:1px solid rgba(124,107,255,.18)}.mj-path.gip{background:rgba(57,255,136,.06);border-color:rgba(57,255,136,.18)}
+.mj-path b{display:flex;align-items:center;justify-content:space-between;font-size:14px}.mj-path b span{font-size:9px;color:var(--tx3);font-weight:600}.mj-path ul{list-style:none;padding:0;margin:9px 0 0}.mj-path li{position:relative;padding-left:12px;color:var(--tx2);font-size:10.5px;line-height:1.5;margin-top:4px}.mj-path li::before{content:'•';position:absolute;left:0;color:var(--icon)}
+.mj-effects{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px}.mj-effect{display:flex;align-items:center;justify-content:space-between;gap:7px;border-radius:10px;background:rgba(255,255,255,.035);padding:9px;color:var(--tx2);font-size:10.5px}.mj-effect b{color:var(--icon);font-size:13px}
+.mj-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:9px}.mj-fact{text-align:center;border-radius:10px;background:rgba(255,255,255,.035);padding:10px 4px}.mj-fact b{display:block;font-size:14px}.mj-fact span{display:block;color:var(--tx3);font-size:8.5px;line-height:1.3;margin-top:4px;text-transform:uppercase;letter-spacing:.03em}
+.mj-chart{height:185px;margin-top:9px}.mj-chart-empty{display:none;text-align:center;color:var(--tx3);font-size:12px;padding:34px 8px 24px}
+.mj-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;color:var(--tx3);font-size:10px}.mj-legend span{display:flex;align-items:center;gap:6px}.mj-legend i{display:block;width:13px;height:2px;border-radius:9px;background:var(--icon)}.mj-legend i.dash{background:repeating-linear-gradient(90deg,var(--acc2) 0 4px,transparent 4px 7px)}
+.mj-sources{font-size:10.5px;color:var(--tx3);line-height:1.55;margin-top:11px}.mj-sources a{color:var(--acc2);text-decoration:none}.mj-sources a+a{margin-left:9px}
+
 .seg{display:flex;gap:6px;background:var(--surface2);padding:4px;border-radius:13px;margin-bottom:14px}
 .seg button{flex:1;height:38px;border:none;background:none;border-radius:10px;color:var(--tx3);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,color .2s}
 .seg button.on{background:var(--acc);color:#fff}
@@ -211,6 +226,7 @@ input::placeholder,textarea::placeholder{color:var(--tx3)}
 .macro-tab:active{transform:scale(.96)}
 .macro-tab.on{background:rgba(57,255,136,.1);border-color:rgba(57,255,136,.35)}
 .macro-tab.on b,.macro-tab.on span{color:var(--icon)}
+.screen-actions{display:grid;gap:9px}
 .filterbar{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(57,255,136,.08);border:1px solid rgba(57,255,136,.22);border-radius:12px;padding:9px 11px;margin-bottom:8px;color:var(--tx2);font-size:12px}
 .filterbar button{border:0;background:none;color:var(--icon);font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;padding:4px}
 svg.ic{color:var(--icon)!important}
@@ -274,19 +290,14 @@ svg.ic{color:var(--icon)!important}
       <div class="err" id="eKilo"></div>
     </div>
 
-    <div class="card flush">
-      <div class="ttl"><span data-ic="chart"></span>Seyir ve projeksiyon</div>
-      <div class="chart tall"><canvas id="cKilo"></canvas></div>
-      <div class="note" id="nProj" style="padding-bottom:6px"></div>
-    </div>
-
     <div class="card">
-      <div class="ttl"><span data-ic="run"></span>Spor etkisi karşılaştırması</div>
+      <div class="ttl"><span data-ic="chart"></span>Seyir, projeksiyon ve spor etkisi</div>
       <div class="fld" style="margin-bottom:14px">
         <label>Günlük ortalama spor yakımı</label>
         <input type="number" inputmode="numeric" id="iSporHedef" placeholder="400 kcal">
       </div>
-      <div class="chart tall"><canvas id="cSporKarsi"></canvas></div>
+      <div class="chart tall"><canvas id="cKilo"></canvas></div>
+      <div class="note" id="nProj"></div>
       <div class="note" id="nSporKarsi"></div>
     </div>
 
@@ -301,8 +312,14 @@ svg.ic{color:var(--icon)!important}
       <div id="kiloAlerts"></div>
     </div>
 
+    <button type="button" class="btn gh" id="bKiloKayitAc"><span data-ic="list"></span>Kilo kayıtlarını aç</button>
+  </div>
+
+  <!-- KİLO KAYITLARI -->
+  <div class="page" id="p-kilo-kayitlar">
+    <button type="button" class="btn gh" id="bKiloKayitGeri" style="margin-bottom:12px"><span data-ic="scale"></span>Kilo ekranına dön</button>
     <div class="card">
-      <div class="ttl"><span data-ic="clock"></span>Kayıtlar</div>
+      <div class="ttl"><span data-ic="clock"></span>Kilo kayıtları</div>
       <div id="lKilo"></div>
     </div>
   </div>
@@ -323,6 +340,17 @@ svg.ic{color:var(--icon)!important}
       <div class="note" id="kalGrafikBaslik" style="margin:13px 0 5px">Protein · Son 7 gün</div>
       <div class="chart" style="height:150px"><canvas id="cKalori"></canvas></div>
     </div>
+
+    <div class="screen-actions">
+      <button type="button" class="btn gh" id="bKalManuelAc"><span data-ic="pencil"></span>Manuel giriş</button>
+      <button type="button" class="btn gh" id="bKalAiAc"><span data-ic="spark"></span>AI ile analiz</button>
+      <button type="button" class="btn gh" id="bKalKayitAc"><span data-ic="list"></span>Kalori kayıtlarını aç</button>
+    </div>
+  </div>
+
+  <!-- KALORİ MANUEL GİRİŞ -->
+  <div class="page" id="p-kalori-manuel">
+    <button type="button" class="btn gh bKaloriGeri" style="margin-bottom:12px"><span data-ic="meat"></span>Kalori ekranına dön</button>
 
     <div class="card">
       <div class="ttl"><span data-ic="pencil"></span>Manuel giriş</div>
@@ -346,6 +374,11 @@ svg.ic{color:var(--icon)!important}
       <button class="btn" id="bKalori"><span data-ic="plus"></span>Kaydet</button>
       <div class="err" id="eKalori"></div>
     </div>
+  </div>
+
+  <!-- KALORİ AI ANALİZ -->
+  <div class="page" id="p-kalori-ai">
+    <button type="button" class="btn gh bKaloriGeri" style="margin-bottom:12px"><span data-ic="meat"></span>Kalori ekranına dön</button>
 
     <div class="card">
       <div class="ttl"><span data-ic="spark"></span>AI ile hesapla</div>
@@ -395,6 +428,11 @@ svg.ic{color:var(--icon)!important}
       </div>
       <div class="note">AI sonuçları tahminidir. Porsiyon, tarif ve yağ miktarı sonucu ciddi ölçüde değiştirebilir.</div>
     </div>
+  </div>
+
+  <!-- KALORİ KAYITLARI -->
+  <div class="page" id="p-kalori-kayitlar">
+    <button type="button" class="btn gh bKaloriGeri" style="margin-bottom:12px"><span data-ic="meat"></span>Kalori ekranına dön</button>
 
     <div class="card">
       <div class="ttl"><span data-ic="clock"></span>Kayıtlar</div>
@@ -412,29 +450,6 @@ svg.ic{color:var(--icon)!important}
     </div>
 
     <div class="card">
-      <div class="ttl"><span data-ic="run"></span>Antrenman ekle</div>
-      <div class="fld">
-        <label>Aktivite</label>
-        <select id="iSpor"></select>
-      </div>
-      <div class="fld">
-        <label>Süre (dakika)</label>
-        <div class="mchips" id="sureChips">
-          <button class="mchip" data-dk="20">20</button>
-          <button class="mchip on" data-dk="30">30</button>
-          <button class="mchip" data-dk="45">45</button>
-          <button class="mchip" data-dk="60">60</button>
-          <button class="mchip" data-dk="90">90</button>
-        </div>
-        <input type="number" inputmode="numeric" id="iSure" value="30">
-      </div>
-      <div class="fld"><label>Tarih</label><input type="date" id="iSporT"></div>
-      <div class="alert aqu" style="margin-top:0;margin-bottom:12px"><span data-ic="info"></span><span id="onizleme">Tahmini yakım burada görünecek</span></div>
-      <button class="btn" id="bSpor"><span data-ic="plus"></span>Kaydet</button>
-      <div class="err" id="eSpor"></div>
-    </div>
-
-    <div class="card">
       <div class="ttl"><span data-ic="stats"></span>Bu hafta</div>
       <div class="kv"><div class="k">Toplam yakım</div><div class="v" id="spHaftaKcal">—<small>kcal</small></div></div>
       <div class="kv"><div class="k">Toplam süre</div><div class="v" id="spHaftaDk">—<small>dk</small></div></div>
@@ -443,15 +458,88 @@ svg.ic{color:var(--icon)!important}
       <div id="sporAlerts"></div>
     </div>
 
-    <div class="card">
-      <div class="ttl"><span data-ic="clock"></span>Geçmiş</div>
-      <div id="lSpor"></div>
+    <div class="screen-actions">
+      <button type="button" class="btn gh" id="bSporManuelAc"><span data-ic="run"></span>Antrenman ekle</button>
+      <button type="button" class="btn gh" id="bSporAiAc"><span data-ic="spark"></span>AI ile analiz</button>
+      <button type="button" class="btn gh" id="bSporKayitAc"><span data-ic="list"></span>Spor geçmişini aç</button>
     </div>
 
     <div class="card">
       <div class="ttl"><span data-ic="info"></span>Hesap yöntemi</div>
       <div class="note" style="margin-top:0">Yakım, Compendium of Physical Activities MET değerleriyle hesaplanıyor. Standart formül yaşı yok sayar; burada MET, senin Mifflin-St Jeor dinlenme metabolizmanla çarpılıyor — yani yaşın, cinsiyetin ve güncel kilon doğrudan sonuca giriyor. Kilon düştükçe aynı antrenmanın yakımı da düşer.</div>
     </div>
+  </div>
+
+  <!-- SPOR MANUEL GİRİŞ -->
+  <div class="page" id="p-spor-manuel">
+    <button type="button" class="btn gh bSporGeri" style="margin-bottom:12px"><span data-ic="run"></span>Spor ekranına dön</button>
+    <div class="card">
+      <div class="ttl"><span data-ic="run"></span>Antrenman ekle</div>
+      <div class="fld"><label>Aktivite</label><select id="iSpor"></select></div>
+      <div class="fld">
+        <label>Süre (dakika)</label>
+        <div class="mchips" id="sureChips">
+          <button class="mchip" data-dk="20">20</button><button class="mchip on" data-dk="30">30</button>
+          <button class="mchip" data-dk="45">45</button><button class="mchip" data-dk="60">60</button><button class="mchip" data-dk="90">90</button>
+        </div>
+        <input type="number" inputmode="numeric" id="iSure" value="30">
+      </div>
+      <div class="fld"><label>Tarih</label><input type="date" id="iSporT"></div>
+      <div class="alert aqu" style="margin-top:0;margin-bottom:12px"><span data-ic="info"></span><span id="onizleme">Tahmini yakım burada görünecek</span></div>
+      <button class="btn" id="bSpor"><span data-ic="plus"></span>Kaydet</button>
+      <div class="err" id="eSpor"></div>
+    </div>
+  </div>
+
+  <!-- SPOR AI ANALİZ -->
+  <div class="page" id="p-spor-ai">
+    <button type="button" class="btn gh bSporGeri" style="margin-bottom:12px"><span data-ic="run"></span>Spor ekranına dön</button>
+    <div class="card">
+      <div class="ttl"><span data-ic="spark"></span>AI ile antrenman analizi</div>
+      <div class="fld"><label>Ne yaptın?</label><textarea id="iAiSporMetin" placeholder="Örn. 45 dakika tempolu yürüyüş yaptım"></textarea></div>
+      <label>Antrenman fotoğrafı (isteğe bağlı)</label>
+      <div class="media-actions">
+        <button type="button" class="media-btn" id="bAiSporKamera"><span data-ic="camera"></span>Kamera</button>
+        <button type="button" class="media-btn" id="bAiSporGaleri"><span data-ic="fileSelect"></span>Galeri / Dosya</button>
+      </div>
+      <input type="file" id="iAiSporKamera" accept="image/*" capture="environment" style="display:none">
+      <input type="file" id="iAiSporFoto" accept="image/*" style="display:none">
+      <div class="media-status" id="aiSporFotoDurum"><span id="aiSporFotoAd"></span><button type="button" id="bAiSporFotoSil">Kaldır</button></div>
+      <img class="ai-preview" id="aiSporFotoOnizleme" alt="Seçilen antrenman fotoğrafı">
+      <button class="btn" id="bAiSporAnaliz"><span data-ic="spark"></span>AI ile analiz et</button>
+      <div class="err" id="eAiSporAnaliz"></div>
+      <div class="ai-state" id="aiSporDurum">
+        <div class="spin"></div><div class="state-error-icon">!</div>
+        <div class="stx"><b id="aiSporDurumBaslik"></b><span id="aiSporDurumMetin"></span></div>
+        <button type="button" id="bAiSporTekrar">Yeniden dene</button>
+      </div>
+      <div class="ai-question" id="aiSporSoru">
+        <div class="ql"><span data-ic="spark"></span>Daha doğru hesap için</div>
+        <div class="q" id="aiSporSoruMetin"></div><div class="ai-options" id="aiSporSecenekler"></div>
+      </div>
+      <div class="ai-result" id="aiSporSonuc">
+        <div class="ai-edit-title">AI tahmini · Kaydetmeden önce düzenleyebilirsin</div>
+        <div class="fld"><label>Antrenman</label><input type="text" id="iAiSporAd"></div>
+        <div class="f2">
+          <div class="fld"><label>Süre (dakika)</label><input type="number" inputmode="numeric" min="1" max="600" id="iAiSporSure"></div>
+          <div class="fld"><label>Yakım (kcal)</label><input type="number" inputmode="numeric" min="1" id="iAiSporKcal"></div>
+        </div>
+        <div class="f2">
+          <div class="fld"><label>MET</label><input type="number" inputmode="decimal" min="1" max="25" step="0.1" id="iAiSporMet"></div>
+          <div class="fld"><label>Tür</label><select id="iAiSporTur"><option value="0">Kardiyo / diğer</option><option value="1">Direnç antrenmanı</option></select></div>
+        </div>
+        <div class="fld"><label>Tarih</label><input type="date" id="iAiSporT"></div>
+        <div class="note" id="aiSporSonucAciklama" style="margin-top:0"></div>
+        <button class="btn ok" id="bAiSporKaydet"><span data-ic="save"></span>Günlüğe ekle</button>
+      </div>
+      <div class="note">AI sonuçları tahminidir. Süre, tempo, eğim ve dinlenme araları yakımı değiştirir.</div>
+    </div>
+  </div>
+
+  <!-- SPOR GEÇMİŞİ -->
+  <div class="page" id="p-spor-kayitlar">
+    <button type="button" class="btn gh bSporGeri" style="margin-bottom:12px"><span data-ic="run"></span>Spor ekranına dön</button>
+    <div class="card"><div class="ttl"><span data-ic="clock"></span>Spor geçmişi</div><div id="lSpor"></div></div>
   </div>
 
   <!-- SU -->
@@ -500,6 +588,79 @@ svg.ic{color:var(--icon)!important}
   <div class="page" id="p-doz">
     <div class="card">
       <div class="next" id="nextDoz"><div class="d">Sonraki doz</div><div class="big">—</div><div class="sub">kayıt yok</div></div>
+    </div>
+
+    <div class="card" id="mounjaroPanel">
+      <div class="mj-head">
+        <div class="ttl"><span data-ic="spark"></span>Mounjaro etki merkezi</div>
+        <div class="mj-badge">Tahmini model</div>
+      </div>
+      <div class="mj-grid">
+        <div class="mj-widget">
+          <div class="mj-label">Tahmini sistemik yük</div>
+          <div class="mj-value" id="mjYuk">—</div>
+          <div class="mj-sub" id="mjYukSub">Mounjaro dozu girildiğinde hesaplanır</div>
+        </div>
+        <div class="mj-widget">
+          <div class="mj-label">Son dozdan kalan</div>
+          <div class="mj-value" id="mjKalan">—</div>
+          <div class="mj-sub" id="mjKalanSub">Yaklaşık 5 gün yarılanma ömrü</div>
+          <div class="mj-meter"><span id="mjKalanBar"></span></div>
+        </div>
+        <div class="mj-widget">
+          <div class="mj-label">Farmakokinetik evre</div>
+          <div class="mj-value" id="mjEvre">—</div>
+          <div class="mj-sub" id="mjEvreSub">Son doza göre</div>
+        </div>
+        <div class="mj-widget">
+          <div class="mj-label">Denge birikimi</div>
+          <div class="mj-value" id="mjDenge">—</div>
+          <div class="mj-sub" id="mjDengeSub">Aynı dozda yaklaşık 4 hafta</div>
+          <div class="mj-meter"><span id="mjDengeBar"></span></div>
+        </div>
+        <div class="mj-widget wide">
+          <div class="mj-label">İkili inkretin etkisi</div>
+          <div class="mj-paths">
+            <div class="mj-path">
+              <b>GLP-1 <span>reseptör agonizmi</span></b>
+              <ul><li>İştah ve enerji alımı azalır</li><li>Glukoza bağlı insülin yanıtı artar</li><li>Mide boşalması yavaşlar; bu etki zamanla azalır</li></ul>
+            </div>
+            <div class="mj-path gip">
+              <b>GIP <span>ikinci reseptör yolu</span></b>
+              <ul><li>Glukoza bağlı insülin yanıtı artar</li><li>İştah düzenlemesine katkı sağlar</li><li>Yağ ve glukoz metabolizmasını etkiler</li></ul>
+            </div>
+          </div>
+        </div>
+        <div class="mj-widget wide">
+          <div class="mj-label">Vücutta beklenen etki yönleri</div>
+          <div class="mj-effects">
+            <div class="mj-effect"><span>İştah / besin alımı</span><b>↓</b></div>
+            <div class="mj-effect"><span>Glukoza bağlı insülin</span><b>↑</b></div>
+            <div class="mj-effect"><span>Glukoza bağlı glukagon</span><b>↓</b></div>
+            <div class="mj-effect"><span>Mide boşalması</span><b>↓</b></div>
+          </div>
+          <div class="mj-sub" id="mjAnlikNot">Bunlar kan ölçümü değil, ilacın beklenen farmakolojik etki yönleridir.</div>
+        </div>
+        <div class="mj-widget wide">
+          <div class="mj-label">Resmî farmakokinetik bilgiler</div>
+          <div class="mj-facts"><div class="mj-fact"><b>8–72 sa</b><span>Tepe düzey</span></div><div class="mj-fact"><b>≈5 gün</b><span>Yarılanma</span></div><div class="mj-fact"><b>≈4 hafta</b><span>Denge</span></div><div class="mj-fact"><b>%80</b><span>Biyoyararlanım</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card flush" id="mounjaroProjeksiyon">
+      <div class="ttl"><span data-ic="chart"></span>14 günlük teorik etki projeksiyonu</div>
+      <div class="mj-sub" id="mjProjSub">Kayıtlı dozlardan kalan tirzepatid yükü</div>
+      <div class="mj-chart"><canvas id="cMounjaroEtki"></canvas><div class="mj-chart-empty" id="mjChartEmpty">Projeksiyon için bir Mounjaro dozu kaydet</div></div>
+      <div class="mj-legend"><span><i></i>Yeni doz alınmazsa</span><span><i class="dash"></i>Kayıtlı aralık sürerse</span></div>
+    </div>
+
+    <div class="card">
+      <div class="ttl"><span data-ic="shield"></span>Mounjaro güvenlik takibi</div>
+      <div class="alert red" style="margin-top:0"><span data-ic="alert"></span><span><b>Acil değerlendirme gerektirebilir</b>Geçmeyen şiddetli karın ağrısı (sırta vurabilir), tekrarlayan kusma, ciddi susuzluk veya ağır hipoglisemi belirtilerinde tıbbi yardım al.</span></div>
+      <div class="alert amb"><span data-ic="info"></span><span><b>Doktoruna bildir</b>İnsülin/sülfonilüre kullanımı, planlı anestezi veya sedasyon, gebelik planı ve şiddetli mide-bağırsak yakınmaları özel değerlendirme gerektirir.</span></div>
+      <div class="note">Vita; kan şekeri, insülin, GLP-1 veya GIP düzeyini ölçemez. Dozu ya da tedavi aralığını bu tahmine göre değiştirme.</div>
+      <div class="mj-sources">Resmî kaynaklar: <a href="https://www.ema.europa.eu/en/medicines/human/EPAR/mounjaro" target="_blank" rel="noopener">EMA</a><a href="https://www.ema.europa.eu/en/documents/product-information/mounjaro-epar-product-information_en.pdf" target="_blank" rel="noopener">Ürün bilgisi</a><a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215866s034lbl.pdf" target="_blank" rel="noopener">FDA etiketi</a></div>
     </div>
 
     <div class="card">
@@ -713,7 +874,9 @@ SPORLAR.forEach(function(g){ g[1].forEach(function(s){ MET_INDEX[s[0]] = s[1]; }
 var DIRENC = ['Ağırlık — hafif / orta','Ağırlık — yoğun, serbest ağırlık','Vücut ağırlığı / HIIT','Fonksiyonel / crossfit tarzı','Kettlebell','Pilates'];
 
 /* ============ DEPOLAMA ============ */
-var mem = {}, charts = {}, aiBesinSonuc = null, aiFotoDosya = null, aiAnalizBaglam = null, aiTekrarIslem = null, grafikFiltre = {}, kaloriGrafikMetrik = 'protein', sonrakiDozZamani = null, PFX = 'vita:';
+var mem = {}, charts = {}, aiBesinSonuc = null, aiFotoDosya = null, aiAnalizBaglam = null, aiTekrarIslem = null,
+  aiSporSonuc = null, aiSporFotoDosya = null, aiSporBaglam = null, aiSporTekrarIslem = null,
+  grafikFiltre = {}, kaloriGrafikMetrik = 'protein', sonrakiDozZamani = null, PFX = 'vita:';
 var aiFotoOptimizeCache = new WeakMap();
 var GEMINI_MODEL = 'gemini-3.5-flash-lite';
 async function getRaw(k){
@@ -786,7 +949,12 @@ function grafikGunTikla(tip,keys,renderFn,listId){
     if(!els||!els.length) return;
     var key=keys[els[0].index]; if(!key) return;
     grafikFiltre[tip]=key;
-    Promise.resolve(renderFn()).then(function(){var el=document.getElementById(listId);if(el)el.scrollIntoView({behavior:'smooth',block:'center'});});
+    Promise.resolve(renderFn()).then(function(){
+      if(tip==='kilo'){kiloKayitEkraniAc();return;}
+      if(tip==='kalori'){kaloriKayitEkraniAc();return;}
+      if(tip==='spor'){sporKayitEkraniAc();return;}
+      var el=document.getElementById(listId);if(el)el.scrollIntoView({behavior:'smooth',block:'center'});
+    });
   };
 }
 function toast(m){
@@ -996,6 +1164,53 @@ async function geminiBesinAnaliz(metin,file,ayar,ekCevaplar,durumCb){
   return sonuc;
 }
 
+async function geminiSporAnaliz(metin,file,ayar,ekCevaplar,durumCb){
+  var p=await loadProfil(), kilo=await guncelKilo();
+  if(!p||!kilo) throw new Error('Önce profil bilgilerini ve kilonu gir');
+  var schema={type:'object',properties:{
+    durum:{type:'string',enum:['sonuc','soru']},soru:{type:'string'},secenekler:{type:'array',items:{type:'string'}},
+    aktivite:{type:'string'},sureDakika:{type:'number'},met:{type:'number'},kalori:{type:'number'},direnc:{type:'boolean'},
+    guven:{type:'string',enum:['düşük','orta','yüksek']},aciklama:{type:'string'}
+  },required:['durum','soru','secenekler','aktivite','sureDakika','met','kalori','direnc','guven','aciklama']};
+  var ek=(ekCevaplar&&ekCevaplar.length)?' Kullanıcının verdiği ek yanıtlar: '+ekCevaplar.join(' | '):'';
+  var prompt='Bir spor fizyolojisi uzmanı gibi antrenmanı analiz et. Aktiviteyi, toplam süreyi, ortalama MET değerini, direnç antrenmanı olup olmadığını ve yakılan aktif kaloriyi tahmin et. Kullanıcı: '+p.yas+' yaş, '+p.cinsiyet+', '+p.boy+' cm, '+kilo+' kg. Görselde saat veya cihaz özeti varsa görünen süre ve aktif kalori değerlerini önceliklendir. Sonucu önemli ölçüde değiştirecek aktivite, süre veya yoğunluk belirsizse durum "soru" olsun; tek kısa soru ve 2-4 seçenek üret, seçeneklerden birini "Emin değilim" yap. Bu durumda sayısal alanları 0, metinleri boş doldur. Bilgi yeterliyse durum "sonuc", soru boş ve secenekler boş dizi olsun. Kullanıcı açıklaması: '+(metin||'Yalnızca görseli analiz et.')+'.'+ek;
+  var parts=[{text:prompt}];
+  if(file){
+    if(durumCb) durumCb('Fotoğraf optimize ediliyor','Antrenman görseli Gemini için hazırlanıyor.');
+    var optimize=await fotoOptimize(file);
+    if(optimize.size>8*1024*1024) throw new Error('Optimize edilen fotoğraf 8 MB sınırını aşıyor');
+    parts.push({inline_data:{mime_type:optimize.type||'image/jpeg',data:await fileBase64(optimize)}});
+  }
+  if(durumCb) durumCb('AI analiz ediyor','Aktivite, süre ve tahmini yakım hesaplanıyor.');
+  var res;
+  try{
+    res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(GEMINI_MODEL)+':generateContent',{
+      method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':ayar.apiKey},
+      body:JSON.stringify({contents:[{role:'user',parts:parts}],generationConfig:{responseMimeType:'application/json',responseSchema:schema}})
+    });
+  }catch(e){throw new Error('İnternet bağlantısı kurulamadı');}
+  var data=await res.json().catch(function(){return {};});
+  if(!res.ok){
+    if(res.status===401||res.status===403) throw new Error('Gemini API anahtarı geçersiz veya yetkisiz');
+    if(res.status===429) throw new Error('API kullanım sınırına ulaşıldı. Biraz sonra yeniden dene.');
+    throw new Error(data.error&&data.error.message?data.error.message:'Gemini isteği başarısız ('+res.status+')');
+  }
+  var raw=data.candidates&&data.candidates[0]&&data.candidates[0].content
+    ? data.candidates[0].content.parts.map(function(x){return x.text||'';}).join(''):'';
+  raw=raw.replace(/^```(?:json)?\s*/i,'').replace(/\s*```$/,'').trim();
+  if(!raw) throw new Error('Gemini boş yanıt verdi');
+  var sonuc;try{sonuc=JSON.parse(raw);}catch(e){throw new Error('AI yanıtı işlenemedi');}
+  sonuc.durum=String(sonuc.durum||'sonuc'); sonuc.soru=String(sonuc.soru||'');
+  sonuc.secenekler=Array.isArray(sonuc.secenekler)?sonuc.secenekler.map(String).filter(Boolean).slice(0,4):[];
+  if(sonuc.durum==='soru'&&(!sonuc.soru||sonuc.secenekler.length<2)) throw new Error('AI geçerli soru seçenekleri oluşturamadı');
+  sonuc.aktivite=String(sonuc.aktivite||'Antrenman');
+  sonuc.sureDakika=Math.max(0,Math.round(Number(sonuc.sureDakika)||0));
+  sonuc.met=Math.max(0,yuvarla(sonuc.met)); sonuc.kalori=Math.max(0,Math.round(Number(sonuc.kalori)||0));
+  if(sonuc.durum==='sonuc'&&sonuc.kalori<=0&&sonuc.met>0&&sonuc.sureDakika>0) sonuc.kalori=sporKcal(sonuc.met,sonuc.sureDakika,kilo,p);
+  sonuc.direnc=Boolean(sonuc.direnc); sonuc.guven=String(sonuc.guven||'orta'); sonuc.aciklama=String(sonuc.aciklama||'');
+  return sonuc;
+}
+
 async function besinKaydet(i){
   var list=await loadList('kaloriKayitlari');
   i.id='y'+Date.now();
@@ -1088,12 +1303,17 @@ async function renderOzet(){
 async function renderKilo(){
   var s = await sortedKilo(), p = await loadProfil();
   var box = document.getElementById('lKilo');
+  var inputEl = document.getElementById('iSporHedef');
+  var rawSpor = await getRaw('sporHedefGunluk');
+  if(rawSpor !== null && document.activeElement !== inputEl) inputEl.value = rawSpor;
+  var sporGunluk = Math.max(0,parseFloat(inputEl.value)||0);
 
   if(!s.length){
     box.innerHTML = '<div class="empty">'+ico('scale','')+'Henüz ölçüm yok</div>';
     ['stBas','stTop','stHaf','stAy','stBmi','stLean'].forEach(function(id){document.getElementById(id).textContent='—';});
     document.getElementById('kiloAlerts').innerHTML='';
     document.getElementById('nProj').textContent='Projeksiyon için profilini doldur ve ölçüm gir.';
+    document.getElementById('nSporKarsi').textContent='';
     if(charts['cKilo']){charts['cKilo'].destroy(); delete charts['cKilo'];}
     return;
   }
@@ -1133,94 +1353,61 @@ async function renderKilo(){
     return '<div class="li"><div class="icb">'+ico('scale','s')+'</div><div class="tx"><b>'+i.kilo+' kg</b><span>'+fmtLong(i.tarih)+'</span></div><button class="rm" data-id="'+i.id+'" data-t="kilo">'+ico('trash','s')+'</button></div>';
   }).join(''):'<div class="empty">'+ico('scale','')+'Bu tarihte ölçüm yok</div>');
 
-  // grafik + projeksiyon
+  // birleşik seyir + projeksiyon + spor karşılaştırması
   var el2 = document.getElementById('cKilo'); if(!el2) return;
   var ctx = el2.getContext('2d');
   var labels = s.map(function(i){return fmtShort(i.tarih);});
   var gunler = s.map(function(i){return dayKey(i.tarih);});
   var gecmis = s.map(function(i){return i.kilo;});
-  var ds = [{data:gecmis,borderColor:'#7C6BFF',borderWidth:2.5,backgroundColor:grad(ctx,'rgba(124,107,255,.26)','rgba(124,107,255,0)'),fill:true,tension:.35,pointRadius:s.length>14?0:3,pointBackgroundColor:'#7C6BFF',pointBorderColor:'#0E0E11',pointBorderWidth:2}];
+  var ds = [{label:'Kilo kayıtları',data:gecmis,borderColor:'#7C6BFF',borderWidth:2.5,backgroundColor:grad(ctx,'rgba(124,107,255,.26)','rgba(124,107,255,0)'),fill:true,tension:.35,pointRadius:s.length>14?0:3,pointBackgroundColor:'#7C6BFF',pointBorderColor:'#0E0E11',pointBorderWidth:2}];
 
   if(p && p.hedef){
-    var seri = simule(p, son.kilo, p.hiz||0.5, 130);
-    var hedefH = null;
-    for(var i=0;i<seri.length;i++){ if(seri[i].kilo<=p.hedef){ hedefH=seri[i].h; break; } }
-    var kes = Math.min(seri.length, (hedefH||78)+10);
+    var hiz=p.hiz||0.5;
+    var seriSporsuz=simule(p,son.kilo,hiz,130,0);
+    var seriSporlu=simule(p,son.kilo,hiz,130,sporGunluk);
+    function hedefHafta(seri){for(var i=0;i<seri.length;i++){if(seri[i].kilo<=p.hedef)return seri[i].h;}return null;}
+    var hSporsuz=hedefHafta(seriSporsuz), hSporlu=hedefHafta(seriSporlu);
+    var kes=Math.min(130,Math.max(hSporsuz||60,(sporGunluk>0?hSporlu:0)||60)+8);
     var offset = labels.length-1;
-    for(var w=1;w<kes;w++){ labels.push(fmtShort(addDays(dayKey(son.tarih),w*7))); gunler.push(null); gecmis.push(null); }
-    var proj = new Array(labels.length).fill(null);
-    for(var j=0;j<kes && (offset+j)<labels.length;j++) proj[offset+j]=seri[j].kilo;
-    ds.push({data:proj,borderColor:'#3ED9C4',borderWidth:2,borderDash:[6,5],tension:.3,pointRadius:0,fill:false});
-    ds.push({data:labels.map(function(){return p.hedef;}),borderColor:'rgba(255,255,255,.2)',borderWidth:1.5,borderDash:[3,4],pointRadius:0,fill:false});
+    for(var w=1;w<=kes;w++){labels.push(fmtShort(addDays(dayKey(son.tarih),w*7)));gunler.push(null);gecmis.push(null);}
+    var projSporsuz=new Array(labels.length).fill(null), projSporlu=new Array(labels.length).fill(null);
+    for(var j=0;j<=kes&&(offset+j)<labels.length;j++){
+      projSporsuz[offset+j]=j<seriSporsuz.length?seriSporsuz[j].kilo:null;
+      projSporlu[offset+j]=j<seriSporlu.length?seriSporlu[j].kilo:null;
+    }
+    ds.push({label:'Sporsuz',data:projSporsuz,borderColor:'#3ED9C4',borderWidth:2,borderDash:[6,5],tension:.3,pointRadius:0,fill:false});
+    if(sporGunluk>0) ds.push({label:'Sporlu · '+sporGunluk+' kcal/gün',data:projSporlu,borderColor:'#9BE564',borderWidth:2.5,backgroundColor:grad(ctx,'rgba(155,229,100,.2)','rgba(155,229,100,0)'),tension:.3,pointRadius:0,fill:true});
+    ds.push({label:'Hedef',data:labels.map(function(){return p.hedef;}),borderColor:'rgba(255,255,255,.2)',borderWidth:1.5,borderDash:[3,4],pointRadius:0,fill:false});
 
     var not='';
     if(son.kilo<=p.hedef){ not='Hedef kiloya ulaştın.'; }
-    else if(hedefH){
-      var b = addDays(dayKey(son.tarih),hedefH*7);
-      not = 'Haftada '+(p.hiz||0.5)+' kg hedefiyle '+p.hedef+' kg\'a ~'+hedefH+' hafta ('+b.toLocaleDateString('tr-TR',{month:'long',year:'numeric'})+'). Eğri doğrusal değil: kilo düştükçe harcama da düştüğü için aynı alımda kayıp yavaşlar, ayrıca güvenli alt sınır aşağıdan kısıtlıyor.';
+    else if(hSporsuz){
+      var b = addDays(dayKey(son.tarih),hSporsuz*7);
+      not = 'Haftada '+hiz+' kg hedefiyle '+p.hedef+' kg\'a sporsuz ~'+hSporsuz+' hafta ('+b.toLocaleDateString('tr-TR',{month:'long',year:'numeric'})+').';
     }else{
       not = 'Bu hedef hızda model '+p.hedef+' kg\'a öngörülen sürede ulaşmıyor — güvenli kalori alt sınırı ve düşen harcama eğriyi düzleştiriyor. Antrenman eklemek açığı büyütmenin sağlıklı yolu.';
     }
     document.getElementById('nProj').textContent = not;
-  }
-
-  mkChart('cKilo',{type:'line',data:{labels:labels,datasets:ds},options:chartOpts({onClick:grafikGunTikla('kilo',gunler,renderKilo,'lKilo')})});
-  await renderSporKarsi();
-}
-
-async function renderSporKarsi(){
-  var p = await loadProfil(), kilo = await guncelKilo();
-  var inputEl = document.getElementById('iSporHedef');
-  var raw = await getRaw('sporHedefGunluk');
-  if(raw !== null && document.activeElement !== inputEl) inputEl.value = raw;
-  var sporGunluk = parseFloat(inputEl.value) || 0;
-  var not = document.getElementById('nSporKarsi');
-
-  if(!p || !p.hedef || !kilo){
-    not.textContent = 'Karşılaştırma için profilini doldur ve kilo gir.';
-    if(charts['cSporKarsi']){ charts['cSporKarsi'].destroy(); delete charts['cSporKarsi']; }
-    return;
-  }
-
-  var hiz = p.hiz || 0.5;
-  var seriSporsuz = simule(p, kilo, hiz, 130, 0);
-  var seriSporlu = simule(p, kilo, hiz, 130, sporGunluk);
-
-  function haftaBul(seri){
-    for(var i=0;i<seri.length;i++){ if(seri[i].kilo<=p.hedef) return seri[i].h; }
-    return null;
-  }
-  var hS = haftaBul(seriSporsuz), hL = haftaBul(seriSporlu);
-  var kes = Math.min(130, Math.max(hS||60, hL||60)+8);
-
-  var labels=[], a=[], b=[];
-  var t0 = new Date();
-  for(var w=0; w<=kes; w++){
-    labels.push(fmtShort(new Date(t0.getTime()+w*7*86400000).toISOString()));
-    a.push(w<seriSporsuz.length ? seriSporsuz[w].kilo : null);
-    b.push(w<seriSporlu.length ? seriSporlu[w].kilo : null);
-  }
-
-  var el = document.getElementById('cSporKarsi'); var ctx = el.getContext('2d');
-  mkChart('cSporKarsi',{type:'line',data:{labels:labels,datasets:[
-    {label:'Sporsuz',data:a,borderColor:'#6A6A75',borderWidth:2,borderDash:[4,4],tension:.3,pointRadius:0,fill:false},
-    {label:'Sporlu · '+sporGunluk+' kcal/gün',data:b,borderColor:'#9BE564',borderWidth:2.5,backgroundColor:grad(ctx,'rgba(155,229,100,.22)','rgba(155,229,100,0)'),tension:.3,pointRadius:0,fill:true},
-    {label:'Hedef',data:labels.map(function(){return p.hedef;}),borderColor:'rgba(255,255,255,.2)',borderWidth:1.5,borderDash:[3,4],pointRadius:0,fill:false}
-  ]},options:chartOpts({plugins:{
-    legend:{display:true,labels:{color:'#9B9BA6',boxWidth:10,boxHeight:2,font:{size:10},filter:function(it){return it.text!=='Hedef';}}},
-    tooltip:chartOpts().plugins.tooltip
-  }})});
-
-  if(sporGunluk<=0){
-    not.textContent = 'Günlük ortalama spor yakımını gir, karşılaştırma çizilsin.';
-  }else if(hS && hL){
-    var fark = hS-hL;
-    not.textContent = 'Sporsuz '+hS+' hafta, günde ortalama '+sporGunluk+' kcal yakımla '+hL+' hafta — yaklaşık '+fark+' hafta ('+Math.round(fark/4.3)+' ay) kazandırıyor.';
-  }else if(hL && !hS){
-    not.textContent = kes+' hafta içinde sporsuz hedefe ulaşılmıyor; günde '+sporGunluk+' kcal yakımla '+hL+' haftada ulaşıyor.';
+    var sporNot=document.getElementById('nSporKarsi');
+    if(sporGunluk<=0){
+      sporNot.textContent='Günlük ortalama spor yakımını gir; spor etkisi aynı grafikte gösterilsin.';
+    }else if(hSporsuz&&hSporlu){
+      var kazanc=hSporsuz-hSporlu;
+      sporNot.textContent='Sporsuz '+hSporsuz+' hafta, '+sporGunluk+' kcal/gün sporla '+hSporlu+' hafta — yaklaşık '+kazanc+' hafta ('+Math.round(kazanc/4.3)+' ay) kazanç.';
+    }else if(hSporlu&&!hSporsuz){
+      sporNot.textContent='Sporsuz hedefe ulaşılamıyor; '+sporGunluk+' kcal/gün sporla yaklaşık '+hSporlu+' haftada ulaşılıyor.';
+    }else{
+      sporNot.textContent='Girdiğin spor yakımıyla model gösterilen sürede hedefe ulaşmıyor.';
+    }
   }else{
-    not.textContent = 'Girdiğin yakımla model gösterilen sürede hedefe ulaşmıyor; yakımı artır veya hedef hızını gözden geçir.';
+    document.getElementById('nProj').textContent='Projeksiyon için profilde hedef kilonu tamamla.';
+    document.getElementById('nSporKarsi').textContent='';
   }
+
+  mkChart('cKilo',{type:'line',data:{labels:labels,datasets:ds},options:chartOpts({
+    onClick:grafikGunTikla('kilo',gunler,renderKilo,'lKilo'),
+    plugins:{legend:{display:ds.length>1,labels:{color:'#9B9BA6',boxWidth:10,boxHeight:2,font:{size:10},filter:function(it){return it.text!=='Hedef';}}},tooltip:chartOpts().plugins.tooltip}
+  })});
 }
 
 async function renderKalori(){
@@ -1298,7 +1485,7 @@ async function renderSpor(){
   var hafta = list.filter(function(i){return dayDate(dayKey(i.tarih))>=h7;});
   var hKcal = hafta.reduce(function(a,b){return a+b.kcal;},0);
   var hDk = hafta.reduce(function(a,b){return a+b.dakika;},0);
-  var hDirenc = hafta.filter(function(i){return DIRENC.indexOf(i.ad)>=0;}).length;
+  var hDirenc = hafta.filter(function(i){return i.direnc||DIRENC.indexOf(i.ad)>=0;}).length;
   document.getElementById('spHaftaKcal').innerHTML = hKcal+'<small>kcal</small>';
   document.getElementById('spHaftaDk').innerHTML = hDk+'<small>dk</small>';
   document.getElementById('spHaftaAdet').textContent = hafta.length;
@@ -1314,7 +1501,7 @@ async function renderSpor(){
   var sporGorunen = grafikFiltre.spor ? list.filter(function(i){return dayKey(i.tarih)===grafikFiltre.spor;}) : list;
   box.innerHTML = filtreHTML('spor',grafikFiltre.spor)+(sporGorunen.length
     ? sporGorunen.slice().sort(function(a,b){return new Date(b.tarih)-new Date(a.tarih);}).slice(0,40).map(function(i){
-        return '<div class="li"><div class="icb gr">'+ico(DIRENC.indexOf(i.ad)>=0?'dumbbell':'run','s')+'</div><div class="tx"><b>'+i.ad+'</b><span>'+i.dakika+' dk · '+fmtLong(i.tarih)+'</span></div><div class="amt">'+i.kcal+'</div><button class="rm" data-id="'+i.id+'" data-t="spor">'+ico('trash','s')+'</button></div>';
+        return '<div class="li"><div class="icb gr">'+ico(i.direnc||DIRENC.indexOf(i.ad)>=0?'dumbbell':'run','s')+'</div><div class="tx"><b>'+esc(i.ad)+(i.kaynak==='ai'?'<span class="tag">AI</span>':'')+'</b><span>'+i.dakika+' dk · '+fmtLong(i.tarih)+'</span></div><div class="amt">'+i.kcal+'</div><button class="rm" data-id="'+esc(i.id)+'" data-t="spor">'+ico('trash','s')+'</button></div>';
       }).join('')
     : '<div class="empty">'+ico('run','')+(grafikFiltre.spor?'Bu tarihte antrenman yok':'Henüz antrenman yok')+'</div>');
 
@@ -1333,7 +1520,7 @@ async function onizleAsync(met, dk, el){
   var p = await loadProfil(), kilo = await guncelKilo();
   if(!p || !kilo){ el.textContent='Profil ve kilo girilince tahmini yakım burada görünecek'; return; }
   var kcal = sporKcal(met, dk, kilo, p);
-  el.textContent = 'Tahmini yakım: '+kcal+' kcal · '+met+' MET · '+kilo+' kg · '+p.yas+' yaş. Bu miktar bugünkü kalori hedefine eklenecek.';
+  el.textContent = 'Tahmini yakım: '+kcal+' kcal · '+met+' MET · '+kilo+' kg · '+p.yas+' yaş. Bu miktar spor kaydına eklenecek.';
 }
 
 async function renderSu(){
@@ -1373,8 +1560,97 @@ async function renderSu(){
     options:chartOpts({onClick:grafikGunTikla('su',gunler,renderSu,'lSu'),scales:{x:{grid:{display:false},border:{display:false},ticks:{color:'#6A6A75',font:{size:10}}},y:{grid:{color:'rgba(255,255,255,.05)'},border:{display:false},beginAtZero:true,suggestedMax:hedef*1.15,ticks:{color:'#6A6A75',font:{size:10},maxTicksLimit:4}}}})});
 }
 
+function mounjaroMu(i){ return String(i&&i.ilac||'').trim().toLocaleLowerCase('tr-TR')==='mounjaro'; }
+function tirzepatidYuku(list,zaman){
+  var t=zaman instanceof Date?zaman:new Date(zaman), toplam=0;
+  list.forEach(function(i){
+    var doz=Number(i.deger)||0, dt=dozKayitZamani(i);
+    if(doz<=0||isNaN(dt.getTime())||dt>t) return;
+    var gun=(t-dt)/86400000;
+    toplam += doz*.8*Math.pow(.5,gun/5);
+  });
+  return toplam;
+}
+function mounjaroEvre(saat){
+  if(saat<8) return {ad:'Emilim',not:'Tepe aralığı henüz başlamamış olabilir'};
+  if(saat<=72) return {ad:'Tepe aralığı',not:'Maksimum konsantrasyon 8–72 saatte beklenir'};
+  if(saat<=120) return {ad:'Sürdürme',not:'Düzey kademeli azalırken etki sürebilir'};
+  if(saat<=168) return {ad:'Geç hafta',not:'Yaklaşık 5 günlük yarılanma ömrü içinde'};
+  return {ad:'Aralık aşıldı',not:'Kayıtlı haftalık aralığın ötesinde'};
+}
+function mounjaroAyniDozSerisi(list){
+  var s=list.slice().sort(function(a,b){return dozKayitZamani(b)-dozKayitZamani(a);});
+  if(!s.length) return 0;
+  var doz=Number(s[0].deger), onceki=dozKayitZamani(s[0]), adet=1;
+  for(var i=1;i<s.length;i++){
+    var dt=dozKayitZamani(s[i]), fark=(onceki-dt)/86400000;
+    if(Math.abs(Number(s[i].deger)-doz)>.01||fark<3||fark>10) break;
+    adet++; onceki=dt;
+  }
+  return adet;
+}
+function renderMounjaro(list){
+  var simdi=new Date();
+  var mj=list.filter(function(i){return mounjaroMu(i)&&dozKayitZamani(i)<=simdi;}).sort(function(a,b){return dozKayitZamani(a)-dozKayitZamani(b);});
+  var ids=['mjYuk','mjKalan','mjEvre','mjDenge'];
+  if(!mj.length){
+    ids.forEach(function(id){document.getElementById(id).textContent='—';});
+    document.getElementById('mjYukSub').textContent='Mounjaro dozu girildiğinde hesaplanır';
+    document.getElementById('mjKalanSub').textContent='Yaklaşık 5 gün yarılanma ömrü';
+    document.getElementById('mjEvreSub').textContent='Son doza göre';
+    document.getElementById('mjDengeSub').textContent='Aynı dozda yaklaşık 4 hafta';
+    document.getElementById('mjKalanBar').style.width='0';
+    document.getElementById('mjDengeBar').style.width='0';
+    document.getElementById('mjProjSub').textContent='Kayıtlı dozlardan kalan tirzepatid yükü';
+    document.getElementById('cMounjaroEtki').style.display='none';
+    document.getElementById('mjChartEmpty').style.display='block';
+    if(charts.cMounjaroEtki){charts.cMounjaroEtki.destroy();delete charts.cMounjaroEtki;}
+    return;
+  }
+
+  var son=mj[mj.length-1], sonZaman=dozKayitZamani(son), gecenSaat=Math.max(0,(simdi-sonZaman)/3600000);
+  var yuk=tirzepatidYuku(mj,simdi), kalan=Math.min(100,100*Math.pow(.5,gecenSaat/120));
+  var evre=mounjaroEvre(gecenSaat), seri=mounjaroAyniDozSerisi(mj), denge=Math.min(100,seri/4*100);
+  document.getElementById('mjYuk').innerHTML=(yuk<10?yuk.toFixed(2):yuk.toFixed(1))+'<small> mg-eşd.</small>';
+  document.getElementById('mjYukSub').textContent='Doz, %80 biyoyararlanım ve 5 gün yarılanma ömrüyle modellenir';
+  document.getElementById('mjKalan').innerHTML=Math.round(kalan)+'<small>%</small>';
+  document.getElementById('mjKalanSub').textContent=Math.floor(gecenSaat/24)+' gün '+Math.floor(gecenSaat%24)+' saat önce uygulandı';
+  document.getElementById('mjKalanBar').style.width=kalan+'%';
+  document.getElementById('mjEvre').textContent=evre.ad;
+  document.getElementById('mjEvreSub').textContent=evre.not;
+  document.getElementById('mjDenge').innerHTML=Math.min(seri,4)+'<small> / 4 doz</small>';
+  document.getElementById('mjDengeSub').textContent=seri>=4?'Haftalık kullanımda denge maruziyetine yakın':'Aynı dozda ardışık haftalık kayıt';
+  document.getElementById('mjDengeBar').style.width=denge+'%';
+  document.getElementById('mjAnlikNot').textContent=evre.ad+' evresi · Etkinin şiddeti kan düzeyi veya doz geçmişinden kesin hesaplanamaz.';
+
+  var aralik=Math.max(1,Math.min(365,parseInt(son.aralikGun)||7));
+  var sonraki=new Date(sonZaman), bitis=new Date(simdi); bitis.setDate(bitis.getDate()+14);
+  while(sonraki<=simdi) sonraki.setDate(sonraki.getDate()+aralik);
+  var plan=mj.slice(), planT=new Date(sonraki);
+  while(planT<=bitis){
+    plan.push({ilac:'Mounjaro',deger:son.deger,tarih:planT.toISOString()});
+    planT=new Date(planT); planT.setDate(planT.getDate()+aralik);
+  }
+  var labels=[], azalan=[], planli=[];
+  for(var g=0;g<=14;g++){
+    var z=new Date(simdi); z.setDate(z.getDate()+g);
+    labels.push(g===0?'Bugün':z.toLocaleDateString('tr-TR',{day:'numeric',month:'short'}));
+    azalan.push(+tirzepatidYuku(mj,z).toFixed(2));
+    planli.push(+tirzepatidYuku(plan,z).toFixed(2));
+  }
+  document.getElementById('mjProjSub').textContent=son.deger+' mg son doz · '+aralik+' günlük aralık sürerse kesikli çizgi · Kan konsantrasyonu değildir';
+  document.getElementById('cMounjaroEtki').style.display='block';
+  document.getElementById('mjChartEmpty').style.display='none';
+  var ctx=document.getElementById('cMounjaroEtki').getContext('2d');
+  mkChart('cMounjaroEtki',{type:'line',data:{labels:labels,datasets:[
+    {label:'Yeni doz alınmazsa',data:azalan,borderColor:'#39FF88',borderWidth:2.4,backgroundColor:grad(ctx,'rgba(57,255,136,.18)','rgba(57,255,136,0)'),fill:true,pointRadius:0,tension:.28},
+    {label:'Kayıtlı aralık sürerse',data:planli,borderColor:'#A99BFF',borderWidth:2,borderDash:[5,5],fill:false,pointRadius:0,tension:.18}
+  ]},options:chartOpts({scales:{x:{grid:{display:false},border:{display:false},ticks:{color:'#6A6A75',font:{size:9},maxTicksLimit:6}},y:{grid:{color:'rgba(255,255,255,.05)'},border:{display:false},beginAtZero:true,ticks:{color:'#6A6A75',font:{size:9},maxTicksLimit:4,callback:function(v){return v+' mg';}}}}})});
+}
+
 async function renderDoz(){
   var list = await loadList('dozKayitlari');
+  renderMounjaro(list);
   var box = document.getElementById('lDoz'), nx = document.getElementById('nextDoz');
   if(!list.length){
     box.innerHTML = '<div class="empty">'+ico('syringe','')+'Henüz kayıt yok</div>';
@@ -1468,12 +1744,12 @@ function ustTarihYaz(){
 }
 var aktifGun=todayISO();
 ustTarihYaz();
-['iKiloT','iKalT','iDozT','iSporT'].forEach(function(id){document.getElementById(id).value=aktifGun;});
+['iKiloT','iKalT','iDozT','iSporT','iAiSporT'].forEach(function(id){document.getElementById(id).value=aktifGun;});
 document.getElementById('iDozSaat').value=saatDakika(new Date());
 getRaw('dozAraligi').then(function(v){if(v)document.getElementById('iDozAralik').value=v;});
 async function gunDegisiminiKontrolEt(){
   var yeniGun=todayISO(); if(yeniGun===aktifGun) return;
-  ['iKiloT','iKalT','iDozT','iSporT'].forEach(function(id){
+  ['iKiloT','iKalT','iDozT','iSporT','iAiSporT'].forEach(function(id){
     var el=document.getElementById(id); if(!el.value||el.value===aktifGun) el.value=yeniGun;
   });
   aktifGun=yeniGun; grafikFiltre={}; ustTarihYaz(); await renderAll();
@@ -1483,17 +1759,37 @@ setInterval(dozGeriSayimGuncelle,1000);
 window.addEventListener('focus',gunDegisiminiKontrolEt);
 document.addEventListener('visibilitychange',function(){if(!document.hidden) gunDegisiminiKontrolEt();});
 
+function uygulamaSayfasiAc(sayfa,baslik,dockSayfa){
+  document.querySelectorAll('.dk').forEach(function(x){x.classList.toggle('on',x.dataset.p===dockSayfa);});
+  document.querySelectorAll('.page').forEach(function(x){x.classList.remove('on');});
+  document.getElementById('p-'+sayfa).classList.add('on');
+  document.getElementById('pageTitle').textContent=baslik;
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(function(){Object.keys(charts).forEach(function(x){try{charts[x].resize();}catch(e){}});},60);
+}
+function kiloKayitEkraniAc(){uygulamaSayfasiAc('kilo-kayitlar','Kilo kayıtları','kilo');}
+function kaloriKayitEkraniAc(){uygulamaSayfasiAc('kalori-kayitlar','Kalori kayıtları','kalori');}
+function sporKayitEkraniAc(){uygulamaSayfasiAc('spor-kayitlar','Spor geçmişi','spor');}
+
 document.querySelectorAll('.dk').forEach(function(b){
-  b.addEventListener('click',function(){
-    document.querySelectorAll('.dk').forEach(function(x){x.classList.remove('on');});
-    document.querySelectorAll('.page').forEach(function(x){x.classList.remove('on');});
-    b.classList.add('on');
-    document.getElementById('p-'+b.dataset.p).classList.add('on');
-    document.getElementById('pageTitle').textContent = b.dataset.t;
-    window.scrollTo({top:0,behavior:'smooth'});
-    setTimeout(function(){ Object.keys(charts).forEach(function(x){ try{charts[x].resize();}catch(e){} }); },60);
-  });
+  b.addEventListener('click',function(){uygulamaSayfasiAc(b.dataset.p,b.dataset.t,b.dataset.p);});
 });
+document.getElementById('bKiloKayitAc').addEventListener('click',async function(){
+  delete grafikFiltre.kilo; await renderKilo(); kiloKayitEkraniAc();
+});
+document.getElementById('bKiloKayitGeri').addEventListener('click',function(){uygulamaSayfasiAc('kilo','Kilo','kilo');});
+document.getElementById('bKalManuelAc').addEventListener('click',function(){uygulamaSayfasiAc('kalori-manuel','Manuel kalori girişi','kalori');});
+document.getElementById('bKalAiAc').addEventListener('click',function(){uygulamaSayfasiAc('kalori-ai','AI ile kalori analizi','kalori');});
+document.getElementById('bKalKayitAc').addEventListener('click',async function(){
+  delete grafikFiltre.kalori; await renderKalori(); kaloriKayitEkraniAc();
+});
+document.querySelectorAll('.bKaloriGeri').forEach(function(b){b.addEventListener('click',function(){uygulamaSayfasiAc('kalori','Kalori','kalori');});});
+document.getElementById('bSporManuelAc').addEventListener('click',function(){uygulamaSayfasiAc('spor-manuel','Antrenman ekle','spor');});
+document.getElementById('bSporAiAc').addEventListener('click',function(){uygulamaSayfasiAc('spor-ai','AI ile spor analizi','spor');});
+document.getElementById('bSporKayitAc').addEventListener('click',async function(){
+  delete grafikFiltre.spor;await renderSpor();sporKayitEkraniAc();
+});
+document.querySelectorAll('.bSporGeri').forEach(function(b){b.addEventListener('click',function(){uygulamaSayfasiAc('spor','Spor','spor');});});
 
 document.querySelectorAll('#sureChips .mchip').forEach(function(c){
   c.addEventListener('click',function(){
@@ -1515,7 +1811,7 @@ document.getElementById('iSporHedef').addEventListener('input', function(){
   clearTimeout(window._shTimer);
   window._shTimer = setTimeout(async function(){
     await setRaw('sporHedefGunluk', document.getElementById('iSporHedef').value);
-    await renderSporKarsi();
+    await renderKilo();
   }, 350);
 });
 
@@ -1706,6 +2002,106 @@ document.getElementById('bAiKaydet').addEventListener('click',async function(){
   toast('AI tahmini günlüğe eklendi');
 });
 
+function aiSporSoruKapat(){
+  document.getElementById('aiSporSoru').classList.remove('on');
+  document.getElementById('aiSporSoruMetin').textContent='';
+  document.getElementById('aiSporSecenekler').innerHTML='';
+}
+function aiSporDurumKapat(){document.getElementById('aiSporDurum').className='ai-state';aiSporTekrarIslem=null;}
+function aiSporDurumGoster(baslik,metin,hata,tekrar){
+  document.getElementById('aiSporDurum').className='ai-state on'+(hata?' error':'');
+  document.getElementById('aiSporDurumBaslik').textContent=baslik;
+  document.getElementById('aiSporDurumMetin').textContent=metin||'';
+  aiSporTekrarIslem=hata&&tekrar?tekrar:null;
+}
+function aiSporKontrolleriKilitle(kilit){
+  ['iAiSporMetin','bAiSporKamera','bAiSporGaleri','bAiSporFotoSil'].forEach(function(id){document.getElementById(id).disabled=kilit;});
+}
+function aiSporArayuzSifirla(){
+  aiSporBaglam=null;aiSporSonuc=null;aiSporSoruKapat();aiSporDurumKapat();hideErr('eAiSporAnaliz');
+  document.getElementById('aiSporSonuc').classList.remove('on');
+}
+function aiSporFotoTemizle(){
+  var img=document.getElementById('aiSporFotoOnizleme');if(img._url)URL.revokeObjectURL(img._url);
+  img._url='';img.style.display='none';img.removeAttribute('src');aiSporFotoDosya=null;
+  document.getElementById('iAiSporFoto').value='';document.getElementById('iAiSporKamera').value='';
+  document.getElementById('aiSporFotoDurum').classList.remove('on');document.getElementById('aiSporFotoAd').textContent='';
+  aiSporArayuzSifirla();
+}
+function aiSporFotoSecildi(input){
+  var file=input.files&&input.files[0];if(!file)return;aiSporArayuzSifirla();
+  var img=document.getElementById('aiSporFotoOnizleme');if(img._url)URL.revokeObjectURL(img._url);
+  aiSporFotoDosya=file;
+  if(input.id==='iAiSporKamera')document.getElementById('iAiSporFoto').value='';else document.getElementById('iAiSporKamera').value='';
+  img._url=URL.createObjectURL(file);img.src=img._url;img.style.display='block';
+  document.getElementById('aiSporFotoAd').textContent=file.name||'Kamera fotoğrafı';document.getElementById('aiSporFotoDurum').classList.add('on');
+}
+document.getElementById('bAiSporKamera').addEventListener('click',function(){document.getElementById('iAiSporKamera').click();});
+document.getElementById('bAiSporGaleri').addEventListener('click',function(){document.getElementById('iAiSporFoto').click();});
+document.getElementById('iAiSporKamera').addEventListener('change',function(){aiSporFotoSecildi(this);});
+document.getElementById('iAiSporFoto').addEventListener('change',function(){aiSporFotoSecildi(this);});
+document.getElementById('bAiSporFotoSil').addEventListener('click',aiSporFotoTemizle);
+document.getElementById('iAiSporMetin').addEventListener('input',aiSporArayuzSifirla);
+document.getElementById('bAiSporTekrar').addEventListener('click',function(){var fn=aiSporTekrarIslem;aiSporTekrarIslem=null;if(fn)fn();});
+
+function aiSporYanitGoster(sonuc){
+  aiSporDurumKapat();
+  if(sonuc.durum==='soru'){
+    aiSporSonuc=null;document.getElementById('aiSporSonuc').classList.remove('on');
+    document.getElementById('aiSporSoruMetin').textContent=sonuc.soru;
+    var alan=document.getElementById('aiSporSecenekler');alan.innerHTML='';
+    sonuc.secenekler.forEach(function(secenek,index){var b=document.createElement('button');b.type='button';b.className='ai-option';b.dataset.index=index;b.textContent=secenek;alan.appendChild(b);});
+    document.getElementById('aiSporSoru').classList.add('on');return;
+  }
+  aiSporSoruKapat();aiSporSonuc=sonuc;aiSporBaglam=null;hideErr('eAiSporAnaliz');
+  document.getElementById('iAiSporAd').value=sonuc.aktivite;
+  document.getElementById('iAiSporSure').value=sonuc.sureDakika;
+  document.getElementById('iAiSporKcal').value=sonuc.kalori;
+  document.getElementById('iAiSporMet').value=sonuc.met;
+  document.getElementById('iAiSporTur').value=sonuc.direnc?'1':'0';
+  document.getElementById('aiSporSonucAciklama').textContent=sonuc.aciklama+' · Güven: '+sonuc.guven;
+  document.getElementById('aiSporSonuc').classList.add('on');
+}
+
+document.getElementById('bAiSporAnaliz').addEventListener('click',async function(){
+  var metin=document.getElementById('iAiSporMetin').value.trim(),file=aiSporFotoDosya;
+  if(!metin&&!file){showErr('eAiSporAnaliz','Antrenmanı yaz veya fotoğraf seç');return;}
+  var ayar=await loadAiAyar();if(!ayar||!ayar.apiKey){showErr('eAiSporAnaliz','Önce Profil bölümünden Gemini API anahtarını kaydet');return;}
+  aiSporArayuzSifirla();aiSporBaglam={metin:metin,file:file,cevaplar:[]};
+  var btn=this;btn.disabled=true;aiSporKontrolleriKilitle(true);btn.lastChild.textContent=' Analiz ediliyor…';
+  aiSporDurumGoster('Analiz hazırlanıyor',file?'Fotoğraf işleme sırasına alındı.':'Antrenman açıklaması hazırlanıyor.',false);
+  try{aiSporYanitGoster(await geminiSporAnaliz(metin,file,ayar,[],function(b,m){aiSporDurumGoster(b,m,false);}));}
+  catch(err){aiSporBaglam=null;aiSporSonuc=null;aiSporSoruKapat();var mesaj=err&&err.message?err.message:'AI analizi başarısız';aiSporDurumGoster('Analiz tamamlanamadı',mesaj,true,function(){btn.click();});}
+  finally{btn.disabled=false;aiSporKontrolleriKilitle(false);btn.lastChild.textContent=' AI ile analiz et';}
+});
+
+document.getElementById('aiSporSecenekler').addEventListener('click',async function(e){
+  var btn=e.target.closest('.ai-option');if(!btn||!aiSporBaglam)return;
+  var secim=btn.textContent,soru=document.getElementById('aiSporSoruMetin').textContent;
+  var cevaplar=aiSporBaglam.cevaplar.concat(['Soru: '+soru+' Yanıt: '+secim]);
+  var tum=this.querySelectorAll('.ai-option'),ana=document.getElementById('bAiSporAnaliz');
+  tum.forEach(function(b){b.disabled=true;});ana.disabled=true;aiSporKontrolleriKilitle(true);ana.lastChild.textContent=' Yanıt işleniyor…';
+  aiSporDurumGoster('Yanıt işleniyor','Seçimin antrenmanla birlikte yeniden değerlendiriliyor.',false);
+  try{
+    var ayar=await loadAiAyar();var sonuc=await geminiSporAnaliz(aiSporBaglam.metin,aiSporBaglam.file,ayar,cevaplar,function(b,m){aiSporDurumGoster(b,m,false);});
+    if(aiSporBaglam)aiSporBaglam.cevaplar=cevaplar;aiSporYanitGoster(sonuc);
+  }catch(err){var mesaj=err&&err.message?err.message:'Yanıt işlenemedi';aiSporDurumGoster('Yanıt işlenemedi',mesaj,true,function(){btn.click();});tum.forEach(function(b){b.disabled=false;});}
+  finally{ana.disabled=false;aiSporKontrolleriKilitle(false);ana.lastChild.textContent=' AI ile analiz et';}
+});
+
+document.getElementById('bAiSporKaydet').addEventListener('click',async function(){
+  if(!aiSporSonuc)return;
+  var ad=document.getElementById('iAiSporAd').value.trim(),sure=inputNum('iAiSporSure'),kcal=inputNum('iAiSporKcal'),met=inputNum('iAiSporMet');
+  if(!ad||sure<1||sure>600||kcal<1||met<1){showErr('eAiSporAnaliz','Antrenman, süre, kalori ve MET değerlerini kontrol et');return;}
+  var p=await loadProfil(),kilo=await guncelKilo();if(!p||!kilo){showErr('eAiSporAnaliz','Önce profil bilgilerini ve kilonu gir');return;}
+  hideErr('eAiSporAnaliz');await gunDegisiminiKontrolEt();
+  var list=await loadList('sporKayitlari');
+  list.push({id:'sp'+Date.now(),ad:ad,met:met,dakika:Math.round(sure),kcal:Math.round(kcal),kilo:kilo,tarih:document.getElementById('iAiSporT').value||todayISO(),direnc:document.getElementById('iAiSporTur').value==='1',kaynak:'ai'});
+  await saveList('sporKayitlari',list);delete grafikFiltre.spor;aiSporSonuc=null;
+  document.getElementById('aiSporSonuc').classList.remove('on');document.getElementById('iAiSporMetin').value='';aiSporFotoTemizle();
+  await renderAll();toast('AI antrenman tahmini eklendi');
+});
+
 document.getElementById('bSpor').addEventListener('click', async function(){
   await gunDegisiminiKontrolEt();
   var ad = document.getElementById('iSpor').value;
@@ -1719,7 +2115,7 @@ document.getElementById('bSpor').addEventListener('click', async function(){
   var met = MET_INDEX[ad];
   var kcal = sporKcal(met, dk, kilo, p);
   var list = await loadList('sporKayitlari');
-  list.push({id:'sp'+Date.now(), ad:ad, met:met, dakika:dk, kcal:kcal, kilo:kilo, tarih:t});
+  list.push({id:'sp'+Date.now(), ad:ad, met:met, dakika:dk, kcal:kcal, kilo:kilo, tarih:t,direnc:DIRENC.indexOf(ad)>=0,kaynak:'manuel'});
   await saveList('sporKayitlari', list);
   delete grafikFiltre.spor;
   await renderAll();
